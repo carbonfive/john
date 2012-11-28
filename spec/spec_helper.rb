@@ -1,5 +1,6 @@
 require 'john'
 require 'rack/test'
+require 'faker'
 
 set :environment, :test
 
