@@ -10,4 +10,6 @@ gem 'rake'
 
 group :test do
   gem 'rspec'
+  gem 'capybara'
+  gem 'vcr'
 end
