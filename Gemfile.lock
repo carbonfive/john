@@ -17,6 +17,8 @@ GEM
       diff-lcs (~> 1.1.3)
     rspec-mocks (2.12.0)
     sequel (3.41.0)
+    shotgun (0.9)
+      rack (>= 1.0)
     sinatra (1.3.3)
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
@@ -35,6 +37,7 @@ DEPENDENCIES
   haml
   rspec
   sequel
+  shotgun
   sinatra
   sqlite3
   thin
