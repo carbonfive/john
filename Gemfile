@@ -7,9 +7,11 @@ gem 'sinatra'
 gem 'sqlite3'
 gem 'thin'
 gem 'rake'
+gem 'yajl-ruby'
 
 group :test do
   gem 'rspec'
-  gem 'capybara'
+  gem 'webrat'
   gem 'vcr'
+  gem 'webmock', '1.8.0'
 end

@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://192.168.7.40/port_3480/data_request?DataVersion=131172371&id=lu_status
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 28 Nov 2012 22:31:59 GMT
+      Server:
+      - lighttpd/1.4.29
+    body:
+      encoding: US-ASCII
+      string: ! '{ "startup": { "tasks": [ ] }, "devices": [ { "id": 3, "states":
+        [ { "id": 222, "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "variable": "Tripped", "value": "0" }, { "id": 223, "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "variable": "LastTrip", "value": "1354141909" }, { "id": 224, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "LastWakeup", "value": "1354139873" } ], "tooltip": { "display":
+        0 }, "status": -1 } ], "LoadTime": 1354131172, "DataVersion": 131172803, "UserData_DataVersion":
+        131172479, "TimeStamp": 1354141919, "ZWaveStatus": 1, "LocalTime": "2012-11-28
+        14:31:59 D" }'
+    http_version: 
+  recorded_at: Wed, 28 Nov 2012 22:31:57 GMT
+recorded_with: VCR 2.3.0
