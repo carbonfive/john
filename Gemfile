@@ -8,6 +8,7 @@ gem 'sqlite3'
 gem 'thin'
 gem 'rake'
 gem 'yajl-ruby'
+gem 'shotgun'
 
 group :test do
   gem 'rspec'
