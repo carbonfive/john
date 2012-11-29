@@ -3,13 +3,18 @@ body {
   padding: 0;
 }
 
-.occupied {
+#bathroom {
+  background: url('/images/male-female.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+#bathroom.occupied {
   background-color: red;
   height: 100%;
   width: 100%;
 }
 
-.not-occupied {
+#bathroom.not-occupied {
   background-color: green;
   height: 100%;
   width: 100%;
