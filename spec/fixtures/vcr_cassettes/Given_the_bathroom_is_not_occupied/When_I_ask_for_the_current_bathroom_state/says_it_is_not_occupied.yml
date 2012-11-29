@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://192.168.7.40/port_3480/data_request?id=lu_status
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 29 Nov 2012 01:27:06 GMT
+      Server:
+      - lighttpd/1.4.29
+    body:
+      encoding: US-ASCII
+      string: ! '{ "startup": { "tasks": [ ] }, "devices": [ { "id": 1, "states":
+        [ { "id": 16, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1", "variable":
+        "Use45", "value": "1" }, { "id": 17, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "UseMR", "value": "1" }, { "id": 18, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "LimitNeighbors", "value": "0" }, { "id": 19, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "LastUpdate", "value": "1354151819" }, { "id": 20, "service":
+        "urn:micasaverde-com:serviceId:ZWaveNetwork1", "variable": "NetStatusID",
+        "value": "1" }, { "id": 21, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "NetStatusText", "value": "OK" }, { "id": 22, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "LockComPort", "value": "1" }, { "id": 23, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "ComPort", "value": "\/dev\/ttyS0" }, { "id": 24, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "PollingEnabled", "value": "1" }, { "id": 25, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "PollDelayInitial", "value": "20" }, { "id": 26, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "PollDelayDeadTime", "value": "10" }, { "id": 27, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "PollMinDelay", "value": "30" }, { "id": 28, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "PollFrequency", "value": "60" }, { "id": 29, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "VersionInfo", "value": "3.20 L:1" }, { "id": 30, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "HomeID", "value": "House: 16b8b35 Node 1 Suc 0" }, { "id": 31,
+        "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1", "variable": "Role",
+        "value": "Master SIS:NO PRI:YES" }, { "id": 32, "service": "urn:micasaverde-com:serviceId:ZWaveNetwork1",
+        "variable": "LastDongleBackup", "value": "1352023235" }, { "id": 33, "service":
+        "urn:micasaverde-com:serviceId:ZWaveNetwork1", "variable": "LastError", "value":
+        "Node 2 failed" }, { "id": 34, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "AutoConfigure", "value": "1" }, { "id": 35, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "LastTimeOffset", "value": "-8" }, { "id": 36, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "Configured", "value": "0" } ], "Jobs": [ ], "tooltip": { "display":
+        0 }, "status": -1 }, { "id": 2, "states": [ { "id": 102, "service": "urn:micasaverde-com:serviceId:SceneController1",
+        "variable": "Scenes", "value": "" }, { "id": 103, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "IgnoreRoom", "value": "1" }, { "id": 104, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "Configured", "value": "0" } ], "Jobs": [ ], "tooltip": { "display":
+        0 }, "status": -1 }, { "id": 3, "states": [ { "id": 205, "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "variable": "Tripped", "value": "1" }, { "id": 206, "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "variable": "LastTrip", "value": "1354152302" }, { "id": 207, "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "variable": "Armed", "value": "1" }, { "id": 208, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "Configured", "value": "1" }, { "id": 209, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "LastUpdate", "value": "1354131312" }, { "id": 210, "service":
+        "urn:micasaverde-com:serviceId:HaDevice1", "variable": "FirstConfigured",
+        "value": "1350086278" }, { "id": 211, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "BatteryDate", "value": "1354152302" }, { "id": 212, "service":
+        "urn:micasaverde-com:serviceId:HaDevice1", "variable": "BatteryLevel", "value":
+        "100" }, { "id": 213, "service": "urn:micasaverde-com:serviceId:HaDevice1",
+        "variable": "CommFailure", "value": "1" }, { "id": 214, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "Capabilities", "value": "82,156,0,4,32,1,R,B,RS,|48,112,113:1,114,128,132:1,133,134,156,"
+        }, { "id": 215, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1", "variable":
+        "ManufacturerInfo", "value": "134,2,4" }, { "id": 216, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "VersionInfo", "value": "6,2,78,3,6" }, { "id": 217, "service":
+        "urn:micasaverde-com:serviceId:ZWaveDevice1", "variable": "WakeupInterval",
+        "value": "1800" }, { "id": 218, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "NodeInfo", "value": "30,70,71,72,80,84,85,86,9c," }, { "id":
+        219, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1", "variable":
+        "ConfiguredAssoc", "value": "" }, { "id": 220, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "PollSettings", "value": "10800" }, { "id": 221, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "Neighbors", "value": "1," }, { "id": 222, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "LastReset", "value": "1354131311" }, { "id": 223, "service":
+        "urn:micasaverde-com:serviceId:ZWaveDevice1", "variable": "AssociationNum",
+        "value": "1" }, { "id": 224, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "PollOk", "value": "359" }, { "id": 225, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "LastRouteUpdate", "value": "1354131372" }, { "id": 226, "service":
+        "urn:micasaverde-com:serviceId:ZWaveDevice1", "variable": "PollNoReply", "value":
+        "6" }, { "id": 227, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "MultiChEndpoint", "value": "" }, { "id": 228, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "MultiChCapabilities", "value": "" }, { "id": 229, "service":
+        "urn:micasaverde-com:serviceId:ZWaveDevice1", "variable": "ConfiguredName",
+        "value": "" }, { "id": 230, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "ConfiguredVariable", "value": "" }, { "id": 231, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "MeterType", "value": "" }, { "id": 232, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "MeterScale", "value": "" }, { "id": 233, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "SetPointInfo", "value": "" }, { "id": 234, "service": "urn:micasaverde-com:serviceId:ZWaveDevice1",
+        "variable": "LastWakeup", "value": "1354152301" } ], "Jobs": [ ], "tooltip":
+        { "display": 0 }, "status": -1 } ], "scenes": [ { "id": 2, "Jobs": [ ], "tooltip":
+        { "display": 0 }, "status": -1, "active": false }, { "id": 1, "Jobs": [ ],
+        "tooltip": { "display": 0 }, "status": -1, "active": false } ], "LoadTime":
+        1354151819, "DataVersion": 151819062, "UserData_DataVersion": 151819005, "TimeStamp":
+        1354152426, "ZWaveStatus": 1, "LocalTime": "2012-11-28 17:27:06 N" }'
+    http_version: 
+  recorded_at: Thu, 29 Nov 2012 01:27:05 GMT
+recorded_with: VCR 2.3.0

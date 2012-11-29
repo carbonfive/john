@@ -1,25 +1,27 @@
 require 'spec_helper'
 
 describe 'Given the bathroom is occupied', :vcr do
-  context 'When I go to the homepage' do
+  context 'When I ask for the current bathroom state' do
     before do
-      get '/'
+      get '/bathroom'
     end
 
-    it 'Then I should see that the bathroom is occupied' do
-      expect(last_response).to have_selector('.occupied')
+    it 'says it is occupied' do
+      json = JSON last_response.body
+      expect(json['occupied']).to be_true
     end
   end
 end
 
 describe 'Given the bathroom is not occupied', :vcr do
-  context 'When I go to the homepage' do
+  context 'When I ask for the current bathroom state' do
     before do
-      get '/'
+      get '/bathroom'
     end
 
-    it 'Then I should see that the bathroom is not occupied' do
-      expect(last_response).to have_selector('.not-occupied')
+    it 'says it is not occupied' do
+      json = JSON last_response.body
+      expect(json['occupied']).to be_false
     end
   end
 end

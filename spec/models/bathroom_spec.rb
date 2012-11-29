@@ -1,17 +1,15 @@
 require 'spec_helper'
 
 describe Bathroom do
-  describe '.occupied?' do
-    context 'given the bathroom is occupied', :vcr do
-      it 'returns true' do
-        expect(Bathroom).to be_occupied
-      end
+  describe '.to_json', :vcr do
+    before do
+      @to_json = Bathroom.to_json
     end
 
-    context 'given the bathroom is not occupied', :vcr do
-      it 'returns false' do
-        expect(Bathroom).to_not be_occupied
-      end
+    it 'includes its occupied status' do
+      json = JSON @to_json
+      json.should include('occupied')
+      json['occupied'].should be_true
     end
   end
 end

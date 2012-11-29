@@ -8,5 +8,5 @@ get '/' do
 end
 
 get '/bathroom' do
-  {occupied: Bathroom.occupied?}.to_json
+  Bathroom.to_json
 end
