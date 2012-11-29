@@ -1,6 +1,10 @@
-%html
+%html( ng-app = 'john' )
   %head
     %link{ rel: 'stylesheet', type: 'text/css', href: 'stylesheets/main.css' }
+    %script{ src: 'http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js' }
+    %script{ src: 'http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-resource.min.js' }
+    %script{ src: 'javascripts/john.js' }
+    %script{ src: 'javascripts/bathroom_controller.js' }
 
   %body
     = yield
