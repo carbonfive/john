@@ -7,6 +7,9 @@ get '/queue' do
 end
 
 post '/queue' do
-  $current_queue << params[:name]
+  puts params
+  puts "then #{$current_queue}"
+  $current_queue = $current_queue << params[:name]
+  puts "finally #{$current_queue}"
   status 201
 end
