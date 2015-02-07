@@ -9,7 +9,6 @@ gem 'sinatra'
 gem 'thin'
 gem 'rake'
 gem 'yajl-ruby'
-gem 'shotgun'
 gem 'foreman'
 
 group :test do
