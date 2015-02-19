@@ -6,6 +6,8 @@ gem 'sequel'
 gem 'shotgun'
 gem 'sinatra'
 #gem 'sqlite3'
+gem "pry"
+gem "pry-byebug"
 gem 'thin'
 gem 'rake'
 gem 'yajl-ruby'

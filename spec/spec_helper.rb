@@ -8,7 +8,7 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|file| require file}
 
 module SinatraRSpecHelpers
   def app
-    Sinatra::Application
+    John
   end
 end
 
