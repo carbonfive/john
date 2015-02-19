@@ -5,13 +5,16 @@ gem 'haml'
 gem 'sequel'
 gem 'shotgun'
 gem 'sinatra'
-#gem 'sqlite3'
-gem "pry"
-gem "pry-byebug"
+gem 'redis-sinatra'
 gem 'thin'
 gem 'rake'
 gem 'yajl-ruby'
 gem 'foreman'
+
+group :development, :test do
+  gem "pry"
+  gem "pry-byebug"
+end
 
 group :test do
   gem 'rspec'
