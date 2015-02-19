@@ -89,6 +89,7 @@ DEPENDENCIES
   shotgun
   sinatra
   thin
+  thor
   vcr
   webmock (= 1.8.0)
   webrat

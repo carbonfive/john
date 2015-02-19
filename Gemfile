@@ -5,11 +5,13 @@ gem 'haml'
 gem 'sequel'
 gem 'shotgun'
 gem 'sinatra'
-gem 'redis-sinatra'
 gem 'thin'
 gem 'rake'
 gem 'yajl-ruby'
 gem 'foreman'
+gem 'thor'
+gem "redis"
+gem "cache"
 
 group :development, :test do
   gem "pry"

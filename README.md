@@ -10,6 +10,21 @@ Can I go?
 
 Open a web browser: `http://localhost:9393`
 
+### Testing
+
+In a terminal window:
+
+    # redis-server
+
+In a separate terminal:
+
+    # rake
+
+### CLI
+
+    $ thor bathroom:status
+    > The john is not occupied.
+
 ### Running with init.d
 
 You may need to use sudo for these commands:

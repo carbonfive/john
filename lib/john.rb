@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'haml'
+require 'cache'
+require 'redis'
 require_relative 'models/bathroom'
 
 class John < Sinatra::Application
@@ -13,6 +15,16 @@ class John < Sinatra::Application
   end
 
   get '/bathroom' do
-    {occupied: Bathroom.occupied?}.to_json
+    {occupied: bathroom.occupied?}.to_json
+  end
+
+  private
+
+  def cache
+    @cache ||= Cache.wrap(Redis.new)
+  end
+
+  def bathroom
+    @bathroom ||= Bathroom.new(cache)
   end
 end
