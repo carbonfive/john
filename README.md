@@ -35,7 +35,7 @@ You may need to use sudo for these commands:
 
 ### Performance testing
 
-We use JMeter to test server performance.
+We use JMeter to do load testing.
 
     $ brew install jmeter
     $ rake performance:test
@@ -51,3 +51,11 @@ Err:     0 (0.00%)
 
 The key metric is the `0.3/s` metric, which means that at the 35 second
 mark, the server was able to respond to 0.3 requests per second.
+
+### Make 'er fast.
+
+Server                  | Requests/sec
+----------------------- | -------------------
+Thin, no caching        | 0.3
+Thin, redis caching     | 21.2
+
