@@ -6,22 +6,44 @@ class Bathroom
   SENSOR_NAME = "urn:micasaverde-com:serviceId:SecuritySensor1"
   TRIPPED = "Tripped"
 
-  def self.occupied?
-    uri = URI.parse(ENDPOINT)
-    response = Net::HTTP.get_response(uri)
+  attr_reader :cache
 
-    json = JSON response.body
+  def initialize(cache=NullCache.new)
+    @cache = cache
+  end
 
-    devices_json = json['devices']
-
-    device = devices_json.detect do |d|
-      state = d["states"].first
-      state["service"] == SENSOR_NAME
+  def occupied?
+    cache.fetch(:is_occupied, 1) do
+      StatusApiCall.new.perform
     end
+  end
 
-    device["states"].any? do |st|
-      st["variable"] == TRIPPED &&
-        st["value"] == "0"
+  class NullCache
+    def fetch(key, ttl)
+      yield
+    end
+  end
+
+  # Call the Bathroom API, then parse for occupied status.
+  # @return [Boolean] Occupied - true or false
+  class StatusApiCall
+    def perform
+      uri = URI.parse(ENDPOINT)
+      response = Net::HTTP.get_response(uri)
+
+      json = JSON response.body
+
+      devices_json = json['devices']
+
+      device = devices_json.detect do |d|
+        state = d["states"].first
+        state["service"] == SENSOR_NAME
+      end
+
+      device["states"].any? do |st|
+        st["variable"] == TRIPPED &&
+          st["value"] == "0"
+      end
     end
   end
 end

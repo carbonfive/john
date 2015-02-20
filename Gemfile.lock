@@ -5,6 +5,7 @@ GEM
     byebug (2.7.0)
       columnize (~> 0.3)
       debugger-linecache (~> 1.2)
+    cache (0.4.1)
     coderay (1.1.0)
     columnize (0.8.9)
     crack (0.3.1)
@@ -35,6 +36,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.0.2)
+    redis (3.2.1)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -71,17 +73,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cache
   faker
   foreman
   haml
   pry
   pry-byebug
   rake
+  redis
   rspec
   sequel
   shotgun
   sinatra
   thin
+  thor
   vcr
   webmock (= 1.8.0)
   webrat
