@@ -1,2 +1,4 @@
 *.rdb
 log
+jmeter/jmeter.log
+jmeter/results.jtl

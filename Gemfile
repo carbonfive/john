@@ -14,6 +14,7 @@ gem "redis"
 gem "cache"
 
 group :development, :test do
+  gem "ruby-jmeter"
   gem "pry"
   gem "pry-byebug"
 end
