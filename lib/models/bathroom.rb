@@ -1,20 +1,25 @@
 require 'net/http'
 require 'json'
+require_relative "./configuration"
 
 class Bathroom
-  ENDPOINT = 'http://192.168.7.40/port_3480/data_request?id=lu_status&DataVersion=131172371'
   SENSOR_NAME = "urn:micasaverde-com:serviceId:SecuritySensor1"
   TRIPPED = "Tripped"
 
-  attr_reader :cache
+  attr_reader :cache, :config
 
-  def initialize(cache=NullCache.new)
+  def endpoint
+    "http://#{config.sensor_host}/port_3480/data_request?id=lu_status&DataVersion=131172371"
+  end
+
+  def initialize(cache=NullCache.new, config=Configuration.bootstrap)
     @cache = cache
+    @config = config
   end
 
   def occupied?
     cache.fetch(:is_occupied, 1) do
-      StatusApiCall.new.perform
+      StatusApiCall.new(endpoint).perform
     end
   end
 
@@ -27,8 +32,12 @@ class Bathroom
   # Call the Bathroom API, then parse for occupied status.
   # @return [Boolean] Occupied - true or false
   class StatusApiCall
+    def initialize(endpoint)
+      @endpoint = endpoint
+    end
+
     def perform
-      uri = URI.parse(ENDPOINT)
+      uri = URI.parse(@endpoint)
       response = Net::HTTP.get_response(uri)
 
       json = JSON response.body
