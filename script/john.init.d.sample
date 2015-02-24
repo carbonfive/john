@@ -11,7 +11,7 @@
 
 dir="/home/john/john"
 user="john"
-cmd="/home/john/.rbenv/shims/bundle exec foreman start"
+cmd="RACK_ENV=production /home/john/.rbenv/shims/bundle exec foreman start"
 
 name=`basename $0`
 pid_file="/var/run/$name.pid"

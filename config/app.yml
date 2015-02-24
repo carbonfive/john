@@ -1,3 +1,8 @@
-host: 192.168.7.5
-port: 9393
-sensor_host: 192.168.7.40
+development:
+  host: localhost
+  port: 9393
+  sensor_host: 192.168.7.40
+production:
+  host: 192.168.7.5
+  port: 9393
+  sensor_host: 192.168.7.40

@@ -4,6 +4,7 @@ require_relative "../lib/models/configuration"
 class ServerPerformanceTest
   def self.perform
     config = Configuration.bootstrap
+    puts "Beginning load test with: #{config.inspect}"
 
     test do
       threads count: 5, loops: 10 do

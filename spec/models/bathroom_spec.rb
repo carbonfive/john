@@ -1,9 +1,24 @@
 require 'spec_helper'
 
 describe Bathroom do
-  describe '.occupied?' do
-    subject { described_class.new }
 
+  class NullLogger
+    def info(msg); end
+  end
+
+  class NullCache
+    def fetch(key, ttl)
+      yield
+    end
+  end
+
+  let(:logger) { NullLogger.new }
+  let(:cache) { NullCache.new }
+  let(:config) { Configuration.bootstrap }
+
+  subject { described_class.new(cache, config, logger) }
+
+  describe '.occupied?' do
     context 'given the bathroom is occupied', :vcr do
       it 'returns true' do
         expect(subject).to be_occupied
@@ -20,8 +35,6 @@ describe Bathroom do
   context "caching" do
     let(:redis) { Redis.new }
     let(:cache) { Cache.wrap(redis) }
-
-    subject { described_class.new(cache) }
 
     before do
       cache.flush

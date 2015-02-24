@@ -6,27 +6,26 @@ class Bathroom
   SENSOR_NAME = "urn:micasaverde-com:serviceId:SecuritySensor1"
   TRIPPED = "Tripped"
 
-  attr_reader :cache, :config
+  attr_reader :cache, :config, :logger
 
   def endpoint
     "http://#{config.sensor_host}/port_3480/data_request?id=lu_status&DataVersion=131172371"
   end
 
-  def initialize(cache=NullCache.new, config=Configuration.bootstrap)
+  def initialize(cache, config, logger)
     @cache = cache
     @config = config
+    @logger = logger
   end
 
   def occupied?
-    cache.fetch(:is_occupied, 1) do
-      StatusApiCall.new(endpoint).perform
+    response = cache.fetch(:is_occupied, 1) do
+      call_response = StatusApiCall.new(endpoint).perform
+      logger.info "api responded with: #{call_response.inspect}"
+      call_response
     end
-  end
-
-  class NullCache
-    def fetch(key, ttl)
-      yield
-    end
+    logger.info "cache responded with: #{response.inspect}"
+    response
   end
 
   # Call the Bathroom API, then parse for occupied status.

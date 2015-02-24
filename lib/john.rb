@@ -6,8 +6,12 @@ require_relative 'models/bathroom'
 
 class John < Sinatra::Application
   configure do
+    enable :logging
     set :bind, '0.0.0.0'
     set :public_folder, File.expand_path("../../public", __FILE__)
+    file = File.new(File.expand_path("../../log/#{settings.environment}.log", __FILE__), 'a+')
+    file.sync = true
+    use Rack::CommonLogger, file
   end
 
   get '/' do
@@ -25,6 +29,10 @@ class John < Sinatra::Application
   end
 
   def bathroom
-    @bathroom ||= Bathroom.new(cache)
+    @bathroom ||= Bathroom.new(cache, config, logger)
+  end
+
+  def config
+    @config ||= Configuration.bootstrap
   end
 end
