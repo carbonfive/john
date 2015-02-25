@@ -33,11 +33,16 @@ You may need to use sudo for these commands:
     $ chmod +x /etc/init.d/john
     $ /etc/init.d/john start
 
-### Performance testing
+### Load testing
 
 We use JMeter to test server performance.
 
     $ brew install jmeter
+
+    # Testing on production
+    $ RACK_ENV=production rake performance:test
+
+    # Testing locally
     $ rake performance:test
 
 Then wait. You will see output like:
