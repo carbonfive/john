@@ -11,7 +11,7 @@ gem 'yajl-ruby'
 gem 'foreman'
 gem 'thor'
 gem "redis"
-gem "cache"
+gem "cache", github: "andrewhao/cache", branch: "master"
 
 group :development, :test do
   gem "ruby-jmeter"

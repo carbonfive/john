@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/andrewhao/cache.git
+  revision: 780e6d4251f6c4a87ca77b57392ac4bde1b0285e
+  branch: master
+  specs:
+    cache (0.4.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -5,7 +12,6 @@ GEM
     byebug (2.7.0)
       columnize (~> 0.3)
       debugger-linecache (~> 1.2)
-    cache (0.4.1)
     coderay (1.1.0)
     columnize (0.8.9)
     crack (0.3.1)
@@ -81,7 +87,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cache
+  cache!
   faker
   foreman
   haml
