@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/andrewhao/cache.git
-  revision: 3d937af36121b335bd1075a6c2656e5b3291811d
+  revision: 780e6d4251f6c4a87ca77b57392ac4bde1b0285e
   branch: master
   specs:
-    cache (0.4.2)
+    cache (0.4.1)
 
 GEM
   remote: https://rubygems.org/
